@@ -11,11 +11,15 @@ html {
 .page {
   inline-size: 1200px;
   block-size: 100%;
+  outline: none;
+  border: none;
   margin: auto;
   color: #fff;
-  font-family: 'Fira Sans Condensed', sans-serif;
+  font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
   font-size: 18px;
   background-color: #1b1919;
+  display: flex;
+  align-items: center;
 }
 
 h1,
@@ -35,4 +39,279 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+/*------------------------------------------------<<<!!"CONTENT"!!>>>----------------------------------------------------*/
+.content {
+  gap: 30px;
+  max-width: 1140px;
+  display: inline-flex; /*flex*/
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.content__list {
+  overflow-y: auto;
+  max-height: 298px;
+  position: relative;
+}
+
+.content__list-item:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.content__details {
+  display: flex;
+  flex-direction: column;
+  gap: 23px; /*26px*/
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.content__accent {
+  color: #545050;
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%; /* 70.5px */
+  text-transform: uppercase;
+}
+
+.content__card-link {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+
+.content__video-card {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content__video-card:focus {
+  outline: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+  margin: 2px;
+}
+
+.content__video-card:hover {
+  text-decoration-line: underline;
+}
+
+.content__video-card:active {
+  background-color: #545050;
+}
+
+.content__card-link_current:focus {
+  outline: none;
+  border: none;
+}
+
+.content__card-link_current:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.content__video-card-title {
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  line-height: 100%; /* 30px */
+  text-transform: uppercase;
+}
+
+.content__video-card-thumbnail {
+  max-width: 194px;
+  background-size: cover;
+}
+
+.content__video-card-description {
+  color: #fff;
+  font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16.2px; /*90%*/
+  margin-top: 6px;
+}
+
+.content__video-card-description-container {
+  flex: 1;
+}
+/*------------------------------------------------<<<!!"TITLE"!!>>>----------------------------------------------------*/
+.title {
+  color: #fff;
+  font-family: 'Oswald', Arial, Helvetica, sans-serif;
+  font-size: 75px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 94%;
+  text-transform: uppercase;
+}
+/*------------------------------------------------<<<!!"SEARCH-FORM"!!>>>----------------------------------------------------*/
+.search-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 42px;
+}
+
+.search-form__fieldset {
+  border: none; /*fildset*/
+  width: 225px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.search-form__fieldset-title {
+  color: #fff;
+  font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.search-form__checkbox {
+  cursor: pointer;
+  appearance: none;
+  /*Так в разных браузерах будут нужные вам стили.*/
+}
+
+.search-form__checkbox-list {
+  display: inline-flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.search-form__pseudo-checkbox {
+  position: relative;
+  display: inline-block;
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+  background-position: center center;
+  background-color: transparent;
+  width: 15px;
+  height: 15px;
+}
+/*checked*/
+input[type='checkbox']:checked + span {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+}
+
+.search-form__textfield {
+  background-color: transparent;
+  border-style: none;
+  outline: none;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  cursor: pointer;
+  width: 225px;
+  color: #fff;
+  font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.search-form__textfield:focus {
+  outline: none;
+  outline: 0;
+  outline-offset: 0;
+}
+.search-form__textfield:hover {
+  cursor: text;
+}
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__label {
+  display: inline-flex;
+  width: fit-content;
+  cursor: pointer;
+  gap: 8px;
+  border: none;
+  outline: none;
+}
+
+.search-form__label:focus {
+  outline: none;
+  border: none;
+}
+
+.search-form__label:focus {
+  outline: none;
+}
+.search-form__label:hover .search-form__label-text {
+  text-decoration: underline;
+}
+
+.search-form__label:has(:focus-visible) {
+  border: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.search-form__submit-button {
+  width: 205px;
+}
+/*------------------------------------------------<<<!!"RESULIT"!!>>>----------------------------------------------------*/
+.result {
+  width: 711px;
+}
+
+.result__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.result__video-container {
+  margin-bottom: 21px;
+  width: 711px;
+  height: 386px;
+  position: relative;
+}
+
+/*------------------------------------------------<<<!!"VISUALLY-HIDDEN"!!>>>----------------------------------------------------*/
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+/*------------------------------------------------<<<!!"BUTTON"!!>>>----------------------------------------------------*/
+.button {
+  font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  font-size: 18px;
+  height: 34px;
+}
+
+.button:focus {
+  outline: none;
+}
+.button:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 2px;
+}
+
+.button:active {
+  background-color: #545050;
+}
+.button:hover {
+  text-decoration-line: underline;
+}
+
+/*------------------------------------------------<<<!!"MORE-BUTON"!!>>>----------------------------------------------------*/
+.more-button {
+  width: 100%;
 }
