@@ -53,6 +53,11 @@ ol {
   overflow-y: auto;
   max-height: 298px;
   position: relative;
+  min-width: 396px;
+}
+
+.content__list-item {
+  width: 398px;
 }
 
 .content__list-item:not(:last-child) {
@@ -62,9 +67,11 @@ ol {
 .content__details {
   display: flex;
   flex-direction: column;
-  gap: 23px; /*26px*/
-  max-width: 100%;
+  gap: 26px; /*26px*/
   max-height: 100%;
+  min-height: 534px;
+  justify-content: flex-start;
+  max-width: 100%;
 }
 
 .content__accent {
@@ -81,6 +88,7 @@ ol {
   display: block;
   text-decoration: none;
   color: #fff;
+  padding: 2px;
 }
 
 .content__video-card {
@@ -94,8 +102,7 @@ ol {
 
 .content__card-link:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 2px;
-  margin: 2px;
+  outline-offset: -1px;
 }
 
 .content__video-card:hover {
@@ -106,6 +113,10 @@ ol {
   background-color: #545050;
 }
 
+.content__card-link_current {
+  background-color: #545050;
+}
+
 .content__card-link_current:focus {
   outline: none;
   border: none;
@@ -113,7 +124,11 @@ ol {
 
 .content__card-link_current:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: -1px;
+}
+
+.content__card-link_current:active {
+  background-color: #545050;
 }
 
 .content__video-card-title {
@@ -124,8 +139,9 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  max-width: 194px;
-  background-size: cover;
+  width: 194px;
+  object-fit: cover;
+  max-height: 103px;
 }
 
 .content__video-card-description {
@@ -155,33 +171,46 @@ ol {
 .search-form {
   display: flex;
   align-items: flex-end;
-  gap: 42px;
+  gap: 40px;
+  width: 711px;
+  padding-bottom: 5px;
 }
 
 .search-form__fieldset {
   border: none; /*fildset*/
-  width: 225px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 5px; /*8px*/
 }
 
 .search-form__fieldset-title {
   color: #fff;
-  font-family: 'Fira Sans Condensed', Arial, Helvetica, sans-serif;
+  font-family: inherit;
   font-size: 18px;
+  font-weight: inherit;
 }
 
 .search-form__checkbox {
   cursor: pointer;
   appearance: none;
-  /*Так в разных браузерах будут нужные вам стили.*/
+}
+
+.search-form__checkbox:active {/*!*/
+  width: 15px;
+  cursor: pointer;
+  height: 15px;
 }
 
 .search-form__checkbox-list {
   display: inline-flex;
-  justify-content: space-between;
-  margin-bottom: 4px;
+  gap: 15px;
+  width: 212px;
+
+  margin-bottom: 5px;
+}
+
+.search-form__checkbox-list label {
+  padding-left: 3px;
 }
 
 .search-form__pseudo-checkbox {
@@ -216,24 +245,31 @@ input[type='checkbox']:checked + span {
 
 .search-form__textfield:focus {
   outline: none;
-  outline: 0;
-  outline-offset: 0;
 }
+
 .search-form__textfield:hover {
   cursor: text;
 }
 .search-form__textfield:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: 1px;
+}
+
+.search-form__textfield:active {
+  outline: none;
+  outline-offset: none;
+  border: 1px solid #fff;
 }
 
 .search-form__label {
-  display: inline-flex;
+  display: flex;
   width: fit-content;
   cursor: pointer;
-  gap: 8px;
+  gap: 6px;
   border: none;
   outline: none;
+  border-style: none;
+  align-items: center;
 }
 
 .search-form__label:focus {
@@ -241,16 +277,13 @@ input[type='checkbox']:checked + span {
   border: none;
 }
 
-.search-form__label:focus {
-  outline: none;
-}
 .search-form__label:hover .search-form__label-text {
   text-decoration: underline;
 }
 
 .search-form__label:has(:focus-visible) {
-  border: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: 1px;
+  outline: 1px solid #fff;
 }
 
 .search-form__submit-button {
@@ -265,10 +298,11 @@ input[type='checkbox']:checked + span {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .result__video-container {
-  margin-bottom: 21px;
+  margin-bottom: 16px; /*20px*/
   width: 711px;
   height: 386px;
   position: relative;
@@ -301,7 +335,7 @@ input[type='checkbox']:checked + span {
 }
 .button:focus-visible {
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: 1px;
 }
 
 .button:active {
@@ -313,5 +347,6 @@ input[type='checkbox']:checked + span {
 
 /*------------------------------------------------<<<!!"MORE-BUTON"!!>>>----------------------------------------------------*/
 .more-button {
-  width: 100%;
+  width: 399px;
+  margin: 2px;
 }
