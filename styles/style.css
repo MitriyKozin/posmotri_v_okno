@@ -198,10 +198,10 @@ ol {
 .search-form__pseudo-checkbox::before {
   content: '';
   display: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-48%, -48%);
+  /*position: absolute;*/
+  /*top: 50%;*/
+  /*left: 50%;*/
+  /*transform: translate(-48%, -48%);*/
   width: 15px;
   height: 15px;
   background-color: #fff;
