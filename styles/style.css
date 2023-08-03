@@ -20,6 +20,8 @@ html {
   background-color: #1b1919;
   display: flex;
   align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 h1,
@@ -44,16 +46,18 @@ ol {
 .content {
   gap: 30px;
   max-width: 1140px;
-  display: inline-flex; /*flex*/
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: flex-end;
 }
 
 .content__list {
   overflow-y: auto;
-  max-height: 298px;
+  height: 298px;
   position: relative;
   min-width: 396px;
+  /*display: none;*/
 }
 
 .content__list-item {
@@ -68,7 +72,6 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 26px;
-  min-height: 534px;
   justify-content: flex-start;
   max-width: 100%;
 }
@@ -177,10 +180,10 @@ ol {
 }
 
 .search-form__fieldset {
-  border: none; /*fildset*/
+  border: none;
   display: flex;
   flex-direction: column;
-  gap: 5px; /*8px*/
+  gap: 5px;
 }
 
 .search-form__fieldset-title {
@@ -198,10 +201,6 @@ ol {
 .search-form__pseudo-checkbox::before {
   content: '';
   display: none;
-  /*position: absolute;*/
-  /*top: 50%;*/
-  /*left: 50%;*/
-  /*transform: translate(-48%, -48%);*/
   width: 15px;
   height: 15px;
   background-color: #fff;
@@ -216,7 +215,6 @@ ol {
   display: inline-flex;
   gap: 15px;
   width: 212px;
-
   margin-bottom: 5px;
 }
 
